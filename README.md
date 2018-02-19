@@ -12,7 +12,7 @@ Friend finder is deployed to Heroku. Click [here](https://dry-anchorage-38505.he
 
 ## To install, follow the directions below
 
-git clone git@github.com:JaredMHenderson/friend_finder.git
+git clone *git@github.com:JaredMHenderson/friend_finder.git
 
 cd friend_finder
 
