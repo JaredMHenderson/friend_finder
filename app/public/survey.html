@@ -35,7 +35,7 @@
 </head>
 <body>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -45,6 +45,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <h2 id="matchName"></h2>
                     
                 </div>
                 <div class="modal-footer">
@@ -219,7 +220,7 @@
         <hr>
 
         
-        <button type="submit" class="btn btn-primary submit" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
+        <button type="submit" class="btn btn-primary submit">Submit</button>
         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
             Launch demo modal
         </button> -->
@@ -278,7 +279,7 @@
         let newFriend = {
             friendName: $('#name').val().trim(),
             photo: $('#photo').val().trim(),
-            answers: [
+            scores: [
             get_radio_value('q1'),
             get_radio_value('q2'),
             get_radio_value('q3'),
@@ -294,11 +295,10 @@
         console.log(newFriend);
 
         $.post('/api/friends', newFriend, (data) => {
-            if(data){
-                console.log(data);
-                $('modal-body').html('meet you new friend');
-                
-            }
+            $('#matchName').text(data.friendName);
+            $('#resultModal').modal('toggle');
+            // alert('Working');
+ 
         });
         
     });
