@@ -6,7 +6,7 @@ A simple app that takes in 10 answers from a survey and matches you with the mos
 
 # Demo
 
-Friend finder is deployed to Heroku. Click [here](https://dry-anchorage-38505.herokuapp.com/) to view
+Friend finder is deployed to Heroku. Click [here](https://friend-finder-fun-.herokuapp.com/) to view
 
 # Installation 
 
