@@ -295,7 +295,10 @@
         console.log(newFriend);
 
         $.post('/api/friends', newFriend, (data) => {
-            $('#matchName').text(data.friendName);
+            console.log(data);
+            console.log('Hellow World');
+            $('#matchName').text(`Friend: ${data.name}
+            ${data.photo}`);
             $('#resultModal').modal('toggle');
             // alert('Working');
  
